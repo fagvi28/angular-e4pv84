@@ -1,0 +1,148 @@
+<label>
+  name : 
+  <input type="text" [formControl]="name">
+</label>
+<p>name value : {{name.value}}</p>
+
+<p>
+	<button (click)="updateName()">Update Name</button>
+</p>
+<hr>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+	<p>
+		<label>
+  firstName:
+  <input type="text"  formControlName="firstName">
+</label>
+	</p>
+	<p>
+		<label>
+  lastName:
+   <input type="text"  formControlName="lastName">
+</label>
+	</p>
+	<p>
+		<button type="submit">Submit</button>
+	</p>
+</form>
+<p>value : {{profileFormvalue | json}}</p>
+<p> fullname : {{fullName}}
+	<hr>
+	<form [formGroup]="profileForm1" (ngSubmit)="onSubmit1()">
+		<p>
+			<label>
+  firstName1:
+  <input type="text"  formControlName="firstName1">
+</label>
+		</p>
+		<p>
+			<label>
+  lastName1:
+   <input type="text"  formControlName="lastName1">
+</label>
+		</p>
+		<div formGroupName="address1">
+			<p>Address ::::</p>
+			<p>
+				<label>
+    City:
+    <input type="text" formControlName="city1">
+  </label>
+			</p>
+			<p>
+				<label>
+    State:
+    <input type="text" formControlName="state1">
+  </label>
+			</p>
+			<p>
+				<label>
+    country:
+    <input type="text" formControlName="country1">
+  </label>
+			</p>
+			<p>
+				<label>
+    Zip Code:
+    <input type="text" formControlName="zip1">
+  </label>
+			</p>
+		</div>
+		<label>
+  phoneNumber:
+   <input type="text"  formControlName="phoneNumber1">
+</label>
+		<p>
+			<button type="submit">Submit</button>
+		</p>
+    	<p>
+			<button type="submit" (click)="setupdateform()">set updateform</button>
+		</p>
+     	<p>
+			<button type="submit" (click)="patchupdateform()">patch updateform</button>
+		</p>
+    
+	</form>
+	<p>value : {{profileFormvalue | json}}</p>
+	<p> fullname : {{fullName}} </p>
+  <p> address : {{fulladdress}} </p>
+  <p> phoneNumber : {{profileForm1.get('phoneNumber1').value}}</p>
+  <hr>
+  <h5>formbuilder</h5>
+  	<form [formGroup]="profileForm2" (ngSubmit)="onSubmit2()">
+		<p>
+			<label>
+  firstName2*:
+  <input type="text"  formControlName="firstName2" required>
+</label>
+		</p>
+		<p>
+			<label>
+  lastName2*:
+   <input type="text"  formControlName="lastName2" required>
+</label>
+		</p>
+		<div formGroupName="address2">
+			<p>Address ::::</p>
+			<p>
+				<label>
+    City:
+    <input type="text" formControlName="city2">
+  </label>
+			</p>
+			<p>
+				<label>
+    State:
+    <input type="text" formControlName="state2">
+  </label>
+			</p>
+			<p>
+				<label>
+    country:
+    <input type="text" formControlName="country2">
+  </label>
+			</p>
+			<p>
+				<label>
+    Zip Code:
+    <input type="text" formControlName="zip2">
+  </label>
+			</p>
+		</div>
+		<label>
+  phoneNumber:
+   <input type="text"  formControlName="phoneNumber2" >
+</label>
+		<p>
+			<button type="submit">Submit</button>
+		</p>
+    	<p>
+			<button type="submit" (click)="updateform2()">updateform</button>
+		</p>
+    <p>
+  Form Status: {{ profileForm2.status }}
+</p>
+<p>
+  profileFormvalue2:{{profileFormvalue2 | json}}
+</p>
+	</form>
